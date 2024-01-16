@@ -129,7 +129,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
     }
      
     console.log(cart)   
-    
+    //learnt more about objects and arrays and also about loops
 
 
   })
