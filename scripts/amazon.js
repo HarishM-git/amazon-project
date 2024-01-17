@@ -130,7 +130,11 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
      
     console.log(cart)   
     //learnt more about objects and arrays and also about loops
-
+    let whole_quantity=0;
+    cart.forEach(element => {
+      whole_quantity+=element.quantity;
+    });
+    console.log(whole_quantity)
 
   })
 
