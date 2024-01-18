@@ -109,7 +109,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
   button.addEventListener('click', () => {
     
     const productId=button.dataset.productId;
-    console.log(productId);
+    //console.log(productId);
     let matchingId;
     cart.forEach(Id => {
       if (productId===Id.productId){
@@ -128,13 +128,14 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
       })
     }
      
-    console.log(cart)   
+    //console.log(cart)   
     //learnt more about objects and arrays and also about loops
     let whole_quantity=0;
     cart.forEach(element => {
       whole_quantity+=element.quantity;
     });
-    console.log(whole_quantity)
+    //console.log(whole_quantity)
+    document.querySelector('.cart-quantity').innerHTML=whole_quantity;
 
   })
 
