@@ -103,6 +103,39 @@ products.forEach(element => {
 
   
 });
+function addtoCart(productId){
+  let matchingId;
+  JSON.parse(localStorage.getItem('cart')).forEach(Id => {
+    if (productId===Id.productId){
+      matchingId=Id;
+      matchingId.quantity+=1;
+  }
+    else{
+      cart.push({
+        productId:productId,
+        quantity:1
+
+    })
+    localStorage.setItem('cart',JSON.stringify(cart));
+   
+  }
+ 
+  }); 
+  
+  
+   
+};
+function wholequantity(){
+  let whole_quantity=0;
+
+  JSON.parse(localStorage.getItem('cart')).forEach(element => {
+    whole_quantity+=element.quantity;
+
+  });
+  
+ document.querySelector('.cart-quantity').innerHTML=whole_quantity;
+  
+}
 
 document.querySelector('.products-grid').innerHTML=html;
 
@@ -110,33 +143,16 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
   button.addEventListener('click', () => {
     
     const productId=button.dataset.productId;
+   addtoCart(productId);
     //console.log(productId);
-    let matchingId;
-    cart.forEach(Id => {
-      if (productId===Id.productId){
-        matchingId=Id;
-    }
    
-    }); 
-    if(matchingId){
-      matchingId.quantity+=1;
-    }
-    else{
-      cart.push({
-        productId:productId,
-        quantity:1
-  
-      })
-    }
-     
     //console.log(cart)   
     //learnt more about objects and arrays and also about loops
-    let whole_quantity=0;
-    cart.forEach(element => {
-      whole_quantity+=element.quantity;
-    });
+    wholequantity();
     //console.log(whole_quantity)
-    document.querySelector('.cart-quantity').innerHTML=whole_quantity;
+   
+
+    
 
   })
 
