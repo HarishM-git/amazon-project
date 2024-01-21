@@ -47,6 +47,7 @@
 import {cart,addtoCart} from '../data/cart.js';
 //import {addtoCart} from '../data/cart.js'; can be imported as individual
 import {products} from '../data/products.js';
+import {tofixedpricecents} from './utils/money.js';
 
 
 let html='';
@@ -71,7 +72,7 @@ products.forEach(element => {
           </div>
 
           <div class="product-price">
-            ${(element.priceCents/100).toFixed(2)}
+            ${tofixedpricecents(element.priceCents)}
           </div>
 
           <div class="product-quantity-container">
