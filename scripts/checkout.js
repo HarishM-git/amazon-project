@@ -92,5 +92,5 @@ cart.forEach(cartitem => {
     </div>
   `;
 });
-console.log(cartSummaryHTML);
+console.log(cartSummaryHTML);//
 document.querySelector('.order-summary').innerHTML=cartSummaryHTML;
