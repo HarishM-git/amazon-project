@@ -45,6 +45,7 @@
 ]*/
 
 import {cart} from '../data/cart.js';
+import {addtoCart} from '../data/cart.js';
 import {products} from '../data/products.js';
 
 
@@ -103,26 +104,7 @@ products.forEach(element => {
 
   
 });
-function addtoCart(productId){
-  let matchingId;
-  cart.forEach(cartitem => {
-    if (productId===cartitem.productId){
-      matchingId=cartitem;
-  }
- 
-  }); 
-  if(matchingId){
-    matchingId.quantity+=1;
-  }
-  else{
-    cart.push({
-      productId:productId,
-      quantity:1
 
-    })
-  }
-   
-};
 
 function updatecartqt(){
   let whole_quantity=0;
