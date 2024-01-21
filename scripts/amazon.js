@@ -44,8 +44,8 @@
 }
 ]*/
 
-import {cart} from '../data/cart.js';
-import {addtoCart} from '../data/cart.js';
+import {cart,addtoCart} from '../data/cart.js';
+//import {addtoCart} from '../data/cart.js'; can be imported as individual
 import {products} from '../data/products.js';
 
 
