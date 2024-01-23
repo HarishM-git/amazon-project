@@ -15,6 +15,10 @@ if (!cart){
 function savetostorage(){
   localStorage.setItem('cart',JSON.stringify(cart));
 }
+
+
+
+
 export function addtoCart(productId){
   let matchingId;
   cart.forEach(cartitem => {

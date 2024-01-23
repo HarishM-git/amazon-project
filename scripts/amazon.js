@@ -107,13 +107,14 @@ products.forEach(element => {
 });
 
 
-function updatecartqt(){
+export function updatecartqt(){
   let whole_quantity=0;
   cart.forEach(cartitem => {
     whole_quantity+=cartitem.quantity;
   });
   //console.log(whole_quantity)
-  document.querySelector('.cart-quantity').innerHTML=whole_quantity;
+  
+  return whole_quantity;
 
 }
 
@@ -129,8 +130,10 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
    
     //console.log(cart)   
     //learnt more about objects and arrays and also about loops
-    updatecartqt();
+    document.querySelector('.cart-quantity').innerHTML=updatecartqt();  
+
    
   })
 
 })
+

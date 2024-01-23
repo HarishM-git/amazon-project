@@ -4,6 +4,16 @@ import {tofixedpricecents} from './utils/money.js';
 
 
 
+
+let whole_quantity=JSON.parse(localStorage.getItem('whole')) || 0;
+cart.forEach(cartitem => {
+  whole_quantity+=cartitem.quantity;
+});
+localStorage.setItem('whole',JSON.stringify(whole_quantity));
+
+document.querySelector('.js-checkout-products').innerHTML=`${whole_quantity} items`;
+
+
 let cartSummaryHTML='';
 
 cart.forEach(cartitem => {
@@ -11,7 +21,10 @@ cart.forEach(cartitem => {
   let matchingProduct;
   products.forEach(product =>{
     if(product.id===productId){
+
       matchingProduct=product;
+      //now this is the original product
+
     }
     
   })
@@ -108,3 +121,6 @@ document.querySelectorAll('.js-delete-link').forEach(link => {
     container.remove();
   })
 });
+
+
+
