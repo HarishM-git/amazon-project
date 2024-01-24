@@ -113,7 +113,6 @@ export function updatecartqt(){
     whole_quantity+=cartitem.quantity;
   });
   //console.log(whole_quantity)
-  
   return whole_quantity;
 
 }
@@ -137,3 +136,4 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
 
 })
 
+document.querySelector('.cart-quantity').innerHTML=updatecartqt();  
