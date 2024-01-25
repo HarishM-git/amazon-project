@@ -137,4 +137,4 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
 })
 
 document.querySelector('.cart-quantity').innerHTML=updatecartqt();  
-//adding nothing 
+ 
