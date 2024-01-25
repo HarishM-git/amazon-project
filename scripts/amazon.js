@@ -119,7 +119,9 @@ export function updatecartqt(){
 
 document.querySelector('.products-grid').innerHTML=html;
 
+
 document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
+  
   button.addEventListener('click', () => {
     
     
