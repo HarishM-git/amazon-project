@@ -29,7 +29,7 @@
     count:56,
 
   },
-  priceCent:799
+  PriceCent:799
 
 },
 {
