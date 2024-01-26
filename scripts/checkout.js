@@ -11,7 +11,7 @@ console.log(deliverydate.format('dddd MMMM D'));
 
 
 
-document.querySelector.innerHTML  =JSON.parse(localStorage.getItem('hello'));
+document.querySelector('.js-checkout-products').innerHTML  =JSON.parse(localStorage.getItem('hello'));
 
 
 
