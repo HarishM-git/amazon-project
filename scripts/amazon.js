@@ -1,4 +1,7 @@
-/*const a=[
+import {cart,addtoCart} from '../data/cart.js';
+//import {addtoCart} from '../data/cart.js'; can be imported as individual
+import {products} from '../data/products.js';
+import {tofixedpricecents} from './utils/money.js';/*const a=[
 {
   image:'images/products/athletic-cotton-socks-6-pairs.jpg',
   name:'Black and Gray Athletic Cotton Socks - 6 Pairs',
@@ -44,10 +47,9 @@
 }
 ]*/
 
-import {cart,addtoCart} from '../data/cart.js';
-//import {addtoCart} from '../data/cart.js'; can be imported as individual
-import {products} from '../data/products.js';
-import {tofixedpricecents} from './utils/money.js';
+
+
+
 
 
 let html='';

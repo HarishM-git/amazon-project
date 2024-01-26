@@ -5,6 +5,9 @@ import {tofixedpricecents} from './utils/money.js';
 
 
 
+
+
+
 let whole_quantity=JSON.parse(localStorage.getItem('whole')) || 0;
 cart.forEach(cartitem => {
   whole_quantity+=cartitem.quantity;
@@ -124,3 +127,4 @@ document.querySelectorAll('.js-delete-link').forEach(link => {
 
 
 
+console.log(dayjs());
