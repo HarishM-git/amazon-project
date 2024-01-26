@@ -20,7 +20,7 @@ function checkout(){
   });
   
 
-  document.querySelector('.js-checkout-products').innerHTML=whole_quantity || 0;
+  document.querySelector('.js-checkout-products').innerHTML=`${whole_quantity} items`|| 0;
 }
 checkout();
 
