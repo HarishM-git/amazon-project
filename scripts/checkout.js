@@ -4,14 +4,27 @@ import {tofixedpricecents} from './utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 
+
 const today=dayjs();
 
 const deliverydate=today.add(7,'days');
-console.log(deliverydate.format('dddd MMMM D'));
+//console.log(deliverydate.format('dddd MMMM D'));
 
 
 
-document.querySelector('.js-checkout-products').innerHTML  =JSON.parse(localStorage.getItem('hello'));
+function checkout(){
+  let cart =JSON.parse(localStorage.getItem('cart'));
+  let whole_quantity=0;
+  cart.forEach(cartitem => {
+    whole_quantity+=cartitem.quantity;
+  });
+  
+
+  document.querySelector('.js-checkout-products').innerHTML=whole_quantity || 0;
+}
+checkout();
+
+
 
 
 
@@ -118,8 +131,9 @@ document.querySelectorAll('.js-delete-link').forEach(link => {
     removeCartItem(productId);
 
     const container=document.querySelector(`.js-cart-item-${productId}`);
-    console.log(container);
+    //console.log(container);
     container.remove();
+    checkout();
   })
 });
 
