@@ -114,10 +114,13 @@ export function updatecartqt(){
   cart.forEach(cartitem => {
     whole_quantity+=cartitem.quantity;
   });
-  //console.log(whole_quantity)
+  console.log(whole_quantity)
+  localStorage.setItem('hello',JSON.stringify(whole_quantity));
+  
   return whole_quantity;
 
 }
+export default updatecartqt;
 
 document.querySelector('.products-grid').innerHTML=html;
 

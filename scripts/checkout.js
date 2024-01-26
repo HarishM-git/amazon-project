@@ -1,20 +1,18 @@
 import {cart,removeCartItem} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {tofixedpricecents} from './utils/money.js';
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+
+
+const today=dayjs();
+
+const deliverydate=today.add(7,'days');
+console.log(deliverydate.format('dddd MMMM D'));
 
 
 
+document.querySelector.innerHTML  =JSON.parse(localStorage.getItem('hello'));
 
-
-
-
-let whole_quantity=JSON.parse(localStorage.getItem('whole')) || 0;
-cart.forEach(cartitem => {
-  whole_quantity+=cartitem.quantity;
-});
-localStorage.setItem('whole',JSON.stringify(whole_quantity));
-
-document.querySelector('.js-checkout-products').innerHTML=`${whole_quantity} items`;
 
 
 let cartSummaryHTML='';
@@ -127,4 +125,3 @@ document.querySelectorAll('.js-delete-link').forEach(link => {
 
 
 
-console.log(dayjs());
