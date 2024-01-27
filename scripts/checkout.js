@@ -80,8 +80,11 @@ cart.forEach(cartitem => {
           </div>
         </div>
 
-        ${deliveryoptionHTML(matchingProduct)}
-          
+        <div class="delivery-options">
+          <div class="delivery-options-title">
+            Choose a delivery option:
+          </div>
+          ${deliveryoptionHTML(matchingProduct)}
         </div>
       </div>
     </div>
@@ -90,36 +93,36 @@ cart.forEach(cartitem => {
 //console.log(cartSummaryHTML)
 function deliveryoptionHTML(matchingProduct){
   let html='';
-
-
   deliveryoption.forEach((deliveryoption)=>{
+
     const today=dayjs(); 
 
     const deliverydate=today.add(deliveryoption.deliverydays,'days');
-    //console.log(deliverydate.format('dddd MMMM D'));
+//console.log(deliverydate.format('dddd MMMM D'));
 
     const pricestring=deliveryoption.pricecents===0
-    ? 'FREE'
-    : `${tofixedpricecents(pricecents)} -`
-        
-    
-    html+=`<div class="delivery-options">
-        <div class="delivery-options-title">
-          Choose a delivery option:
-        </div>s
-        <div class="delivery-option">
-          <input type="radio" checked
-            class="delivery-option-input"
-            name="${matchingProduct.id}">
-          <div>
-            <div class="delivery-option-date">
-            ${deliverydate.format('dddd MMMM D')}
-            </div>
-            <div class="delivery-option-price">
-              ${pricestring} Shipping
-            </div>
-          </div>
-        </div>`
+      ? 'FREE'
+      : `${tofixedpricecents(deliveryoption.pricecents)} -`
+ 
+
+
+
+    html+=`
+    <div class="delivery-option">
+      <input type="radio" checked
+        class="delivery-option-input"
+        name="${matchingProduct.id}">
+      <div>
+        <div class="delivery-option-date">
+        ${deliverydate.format('dddd MMMM D')}
+        </div>
+        <div class="delivery-option-price">
+          ${pricestring} Shipping
+        </div>
+      </div>
+  </div>
+  
+    `
   })
 
   return html;
