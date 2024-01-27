@@ -2,7 +2,7 @@ import {cart,removeCartItem} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {tofixedpricecents} from './utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-import { deliveryoption } from '../data/deliveryoptions.js';
+import { deliveryoptions } from '../data/deliveryoptions.js';
 
 
 
@@ -50,10 +50,24 @@ cart.forEach(cartitem => {
     
   })
   //console.log(matchingProduct);
+  const deliverydateid=cartitem.deliveryoptionID;
+
+let deliveryoption;
+
+deliveryoptions.forEach((option)=>{
+  if (deliverydateid===option.id){
+      deliveryoption=option;
+  }
+})
+    let today=dayjs(); 
+
+    const deliverydate= today.add(deliveryoption.deliverydays,'days');
+
+//console.log(deliverydate.format('dddd MMMM D'));
   cartSummaryHTML+=`
   <div class="cart-item-container js-cart-item-${matchingProduct.id}">
       <div class="delivery-date">
-        Delivery date: Tuesday, June 21
+        Delivery date:${deliverydate.format('dddd MMMM D')}
       </div>
 
       <div class="cart-item-details-grid">
@@ -93,7 +107,7 @@ cart.forEach(cartitem => {
 //console.log(cartSummaryHTML)
 function deliveryoptionHTML(matchingProduct,cartitem){
   let html='';
-  deliveryoption.forEach((deliveryoption)=>{
+  deliveryoptions.forEach((deliveryoption)=>{
 
     const today=dayjs(); 
 
