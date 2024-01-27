@@ -84,14 +84,14 @@ cart.forEach(cartitem => {
           <div class="delivery-options-title">
             Choose a delivery option:
           </div>
-          ${deliveryoptionHTML(matchingProduct)}
+          ${deliveryoptionHTML(matchingProduct,cartitem)}
         </div>
       </div>
     </div>
   `;
 });
 //console.log(cartSummaryHTML)
-function deliveryoptionHTML(matchingProduct){
+function deliveryoptionHTML(matchingProduct,cartitem){
   let html='';
   deliveryoption.forEach((deliveryoption)=>{
 
@@ -103,13 +103,16 @@ function deliveryoptionHTML(matchingProduct){
     const pricestring=deliveryoption.pricecents===0
       ? 'FREE'
       : `${tofixedpricecents(deliveryoption.pricecents)} -`
+
+    const ischecked=deliveryoption.id===cartitem.deliveryoptionID;
+
  
 
 
 
     html+=`
     <div class="delivery-option">
-      <input type="radio" checked
+      <input type="radio" ${ischecked ? 'checked':''}
         class="delivery-option-input"
         name="${matchingProduct.id}">
       <div>
