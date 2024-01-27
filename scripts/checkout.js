@@ -67,7 +67,7 @@ deliveryoptions.forEach((option)=>{
   cartSummaryHTML+=`
   <div class="cart-item-container js-cart-item-${matchingProduct.id}">
       <div class="delivery-date">
-        Delivery date:${deliverydate.format('dddd MMMM D')}
+        Delivery date:  ${deliverydate.format('dddd MMMM D')}
       </div>
 
       <div class="cart-item-details-grid">
