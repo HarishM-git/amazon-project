@@ -5,7 +5,7 @@ import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
 
 
-const today=dayjs();
+const today=dayjs(); 
 
 const deliverydate=today.add(7,'days');
 //console.log(deliverydate.format('dddd MMMM D'));
