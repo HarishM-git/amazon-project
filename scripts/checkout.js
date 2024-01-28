@@ -1,4 +1,4 @@
-import {cart,removeCartItem} from '../data/cart.js';
+import {cart,removeCartItem, updatedeliveryoption} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {tofixedpricecents} from './utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
@@ -125,7 +125,7 @@ function deliveryoptionHTML(matchingProduct,cartitem){
 
 
     html+=`
-    <div class="delivery-option">
+    <div class="delivery-option js-delivery"data-product-id=${matchingProduct.id} data-delivery-option=${deliveryoption.id}>
       <input type="radio" ${ischecked ? 'checked':''}
         class="delivery-option-input"
         name="${matchingProduct.id}">
@@ -160,5 +160,10 @@ document.querySelectorAll('.js-delete-link').forEach(link => {
   })
 });
 
-
+document.querySelectorAll('.js-delivery').forEach(element => {
+    element.addEventListener('click',()=>{
+      const {productId,deliveryOption}=element.dataset;
+      updatedeliveryoption(productId,deliveryOption)
+    })  
+});
 
