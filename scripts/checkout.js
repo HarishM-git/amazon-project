@@ -107,6 +107,8 @@ deliveryoptions.forEach((option)=>{
 //console.log(cartSummaryHTML)
 function deliveryoptionHTML(matchingProduct,cartitem){
   let html='';
+
+  
   deliveryoptions.forEach((deliveryoption)=>{
 
     const today=dayjs(); 
