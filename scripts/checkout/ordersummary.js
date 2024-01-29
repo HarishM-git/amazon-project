@@ -2,7 +2,7 @@ import {cart,removeCartItem, updatedeliveryoption} from '../../data/cart.js';
 import {products,getproduct} from '../../data/products.js';
 import {tofixedpricecents} from '../utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-import { deliveryoptions } from '../../data/deliveryoptions.js';
+import { deliveryoptions,getdeliveryoption } from '../../data/deliveryoptions.js';
 
 
 
@@ -44,13 +44,7 @@ export function renderordersummary(){
           //console.log(matchingProduct);
           const deliverydateid=cartitem.deliveryoptionID;
 
-        let deliveryoption;
-
-        deliveryoptions.forEach((option)=>{
-          if (deliverydateid===option.id){
-              deliveryoption=option;
-          }
-        })
+        let deliveryoption=getdeliveryoption(deliverydateid);
             let today=dayjs(); 
 
             const deliverydate= today.add(deliveryoption.deliverydays,'days');
