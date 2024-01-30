@@ -3,33 +3,12 @@ import {products,getproduct} from '../../data/products.js';
 import {tofixedpricecents} from '../utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryoptions,getdeliveryoption } from '../../data/deliveryoptions.js';
+import { renderpaymentsummary } from './paymentsummary.js';
 
 
 
 
 
-
-
-export function checkout(){
-      let cart =JSON.parse(localStorage.getItem('cart'))||[{
-        productId:'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-        quantity:1,
-        deliveryoptionID:'1'
-      },
-      {
-        productId:'15b6fc6f-327a-4ec4-896f-486349e85a3d',
-        quantity:2,
-        deliveryoptionID:'2'
-      }];;
-      let whole_quantity=0;
-      cart.forEach(cartitem => {
-        whole_quantity+=cartitem.quantity;
-      });
-      
-
-      document.querySelector('.js-checkout-products').innerHTML=`${whole_quantity} items`|| 0;
-    }
-    checkout();
 
 
 export function renderordersummary(){
@@ -144,7 +123,10 @@ export function renderordersummary(){
             const container=document.querySelector(`.js-cart-item-${productId}`);
             //console.log(container);
             container.remove();
+           
             checkout();
+           
+            
           })
         });
 
@@ -160,3 +142,25 @@ export function renderordersummary(){
 
 
   
+export function checkout(){
+  let cart =JSON.parse(localStorage.getItem('cart'))||[{
+    productId:'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+    quantity:1,
+    deliveryoptionID:'1'
+  },
+  {
+    productId:'15b6fc6f-327a-4ec4-896f-486349e85a3d',
+    quantity:2,
+    deliveryoptionID:'2'
+  }];;
+  let whole_quantity=0;
+  cart.forEach(cartitem => {
+    whole_quantity+=cartitem.quantity;
+  });
+  
+
+  document.querySelector('.js-checkout-products').innerHTML=`${whole_quantity} items`|| 0;
+  return whole_quantity;
+}
+checkout();
+
