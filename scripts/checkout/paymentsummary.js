@@ -17,7 +17,7 @@ export function renderpaymentsummary(){
   const totalaftertax=totalbeforetax+tax;
   console.log(totalaftertax);
   const paymentsummaryHTML=`
-          <div class="payment-summary">
+          
                   <div class="payment-summary-title">
                     Order Summary
                   </div>
@@ -57,8 +57,8 @@ export function renderpaymentsummary(){
                     Place your order
                   </button>  
   `
-  
 
+  document.querySelector('.js-payment-summary').innerHTML=paymentsummaryHTML; 
 
 
 }
