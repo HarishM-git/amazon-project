@@ -1,3 +1,3 @@
 export function tofixedpricecents(pricecent){
-  return  (pricecent/100).toFixed(2);
+  return  (Math.round(pricecent)/100).toFixed(2);
 }
