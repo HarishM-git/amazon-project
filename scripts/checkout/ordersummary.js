@@ -123,8 +123,8 @@ export function renderordersummary(){
             const container=document.querySelector(`.js-cart-item-${productId}`);
             //console.log(container);
             container.remove();
-           
-            checkout();
+            console.log(cart);
+              
            
             
           })
@@ -143,6 +143,7 @@ export function renderordersummary(){
 
   
 export function checkout(){
+
   let cart =JSON.parse(localStorage.getItem('cart'))||[{
     productId:'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
     quantity:1,
@@ -162,5 +163,5 @@ export function checkout(){
   document.querySelector('.js-checkout-products').innerHTML=`${whole_quantity} items`|| 0;
   return whole_quantity;
 }
-checkout();
+
 

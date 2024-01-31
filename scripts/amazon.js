@@ -86,11 +86,11 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
 })
 
 export function updatecartqt(){
-  let whole_quantity=0;
-  cart.forEach(cartitem => {
-    whole_quantity+=cartitem.quantity;
-  });
-  console.log(whole_quantity)
+    let whole_quantity=0;
+    cart.forEach(cartitem => {
+      whole_quantity+=cartitem.quantity;
+    });
+    console.log(whole_quantity)
   localStorage.setItem('hello',JSON.stringify(whole_quantity));
   
   return whole_quantity;

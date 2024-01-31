@@ -7,6 +7,8 @@ let productprice=0;
 let shippingproductprice=0;
 
 export function renderpaymentsummary(){
+  
+
   cart.forEach(cartitem => {
     const product= getproduct(cartitem.productId);
     productprice+=product.priceCents*cartitem.quantity;
@@ -59,6 +61,7 @@ export function renderpaymentsummary(){
   `
 
   document.querySelector('.js-payment-summary').innerHTML=paymentsummaryHTML; 
+  return 'hekasdh';
 
 
 }
