@@ -2,30 +2,30 @@ import { cart } from "../../data/cart.js";
 import { getproduct } from "../../data/products.js";
 import {getdeliveryoption} from '../../data/deliveryoptions.js'
 import { tofixedpricecents } from "../utils/money.js";
-import { checkout } from "./ordersummary.js";
+
 let productprice=0;
 let shippingproductprice=0;
 
 export function renderpaymentsummary(){
   
-
+  
   cart.forEach(cartitem => {
     const product= getproduct(cartitem.productId);
     productprice+=product.priceCents*cartitem.quantity;
     const deliveryoption=getdeliveryoption(cartitem.deliveryoptionID);
     shippingproductprice+=deliveryoption.pricecents;
   });
-  const totalbeforetax=productprice+shippingproductprice;
-  const tax=totalbeforetax*0.1;
-  const totalaftertax=totalbeforetax+tax;
-  const paymentsummaryHTML=`
+  let totalbeforetax=productprice+shippingproductprice;
+  let tax=totalbeforetax*0.1;
+  let totalaftertax=totalbeforetax+tax;
+  let paymentsummaryHTML=`
           
                   <div class="payment-summary-title">
                     Order Summary
                   </div>
 
                   <div class="payment-summary-row">
-                    <div>Items (${checkout()}):</div>
+                    <div>Items (${5}):</div>
                     <div class="payment-summary-money">${tofixedpricecents(productprice)}</div>
                   </div>
 
