@@ -8,11 +8,11 @@ let shippingproductprice=0;
 
 export function renderpaymentsummary(){
   
-  
+  console.log(cart);
   cart.forEach(cartitem => {
-    const product= getproduct(cartitem.productId);
+    let product= getproduct(cartitem.productId);
     productprice+=product.priceCents*cartitem.quantity;
-    const deliveryoption=getdeliveryoption(cartitem.deliveryoptionID);
+    let deliveryoption=getdeliveryoption(cartitem.deliveryoptionID);
     shippingproductprice+=deliveryoption.pricecents;
   });
   let totalbeforetax=productprice+shippingproductprice;
