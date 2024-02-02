@@ -9,6 +9,6 @@ describe('testing group for money.js:',()=>{
     expect(tofixedpricecents(0)).toEqual('0.00');
   });
   it('checks for edge test case like rounding of the prices:',()=>{
-    expect(tofixedpricecents(2000.4)).toEqual('20.00');
+    expect(tofixedpricecents(2000.5)).toEqual('20.01');
   });
 });
