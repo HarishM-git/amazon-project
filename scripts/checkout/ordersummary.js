@@ -134,7 +134,7 @@ export function renderordersummary(){
             element.addEventListener('click',()=>{
               const {productId,deliveryOption}=element.dataset;
               updatedeliveryoption(productId,deliveryOption);
-              renderpaymentsummary();
+       
               renderordersummary();
               
             })  

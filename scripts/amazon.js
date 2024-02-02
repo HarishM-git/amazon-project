@@ -91,7 +91,7 @@ export function updatecartqt(){
       whole_quantity+=cartitem.quantity;
     });
     console.log(whole_quantity)
-  localStorage.setItem('hello',JSON.stringify(whole_quantity));
+
   
   return whole_quantity;
 
