@@ -8,5 +8,7 @@ describe('testing group for money.js:',()=>{
   it('checks for zero:',()=>{
     expect(tofixedpricecents(0)).toEqual('0.00');
   });
-  
+  it('checks for edge test case like rounding of the prices:',()=>{
+    expect(tofixedpricecents(2000.4)).toEqual('20.00');
+  });
 });
