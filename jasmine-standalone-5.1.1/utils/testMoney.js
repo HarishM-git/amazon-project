@@ -1,4 +1,4 @@
-import { tofixedpricecents } from "../scripts/utils/money.js";
+import { tofixedpricecents } from "../../scripts/utils/money.js";
 
 
 describe('testing group for money.js:',()=>{
