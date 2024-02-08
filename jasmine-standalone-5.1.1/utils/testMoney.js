@@ -10,5 +10,5 @@ describe('testing group for money.js:',()=>{
   });
   it('checks for edge test case like rounding of the prices:',()=>{
     expect(tofixedpricecents(2000.5)).toEqual('20.01');
-  }); 
+  });  
 });
