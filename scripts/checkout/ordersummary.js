@@ -4,11 +4,12 @@ import {tofixedpricecents} from '../utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryoptions,getdeliveryoption } from '../../data/deliveryoptions.js';
 import { renderpaymentsummary } from './paymentsummary.js';
+import {updatecartqt} from '../amazon.js';
 
 
 
 
-
+console.log(updatecartqt());
 
 
 export function renderordersummary(){
