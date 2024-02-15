@@ -11,6 +11,7 @@ export function loadfromstorage(){
     deliveryoptionID:'2'
   }];
 }
+loadfromstorage();
 
 
 
