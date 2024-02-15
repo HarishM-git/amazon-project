@@ -4,22 +4,7 @@ import {products} from '../data/products.js';
 import {tofixedpricecents} from './utils/money.js';
 
 
-export function updatecartqt(){
-  let whole_quantity=0;
-  cart.forEach(cartitem => {
-    whole_quantity+=cartitem.quantity;
-  });
-  console.log(whole_quantity)
 
-
-return whole_quantity;
-
-}
-updatecartqt();
-
-
-
-document.querySelector('.cart-quantity').innerHTML=updatecartqt();  
 
 
 
@@ -100,5 +85,21 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
   })
 
 })
+export function updatecartqt(){
+  let whole_quantity=0;
+  cart.forEach(cartitem => {
+    whole_quantity+=cartitem.quantity;
+  });
+  console.log(whole_quantity)
+
+
+return whole_quantity;
+
+}
+updatecartqt();
+
+
+
+document.querySelector('.cart-quantity').innerHTML=updatecartqt();  
 
 
