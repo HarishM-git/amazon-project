@@ -25,7 +25,7 @@ export function renderpaymentsummary(){
                   </div>
 
                   <div class="payment-summary-row">
-                    <div>Items (${5}):</div>
+                    <div>Items (${quantityAgain()}):</div>
                     <div class="payment-summary-money">${tofixedpricecents(productprice)}</div>
                   </div>
 
@@ -63,5 +63,18 @@ export function renderpaymentsummary(){
   document.querySelector('.js-payment-summary').innerHTML=paymentsummaryHTML; 
   return 'hekasdh';
 
+
+}
+export function quantityAgain(){
+  let whole_quantity=0;
+  cart.forEach(cartitem => {
+    whole_quantity+=cartitem.quantity;
+  });
+  console.log(whole_quantity)
+  document.querySelector('.js-checkout-products').innerHTML=whole_quantity;
+
+
+
+return whole_quantity;
 
 }

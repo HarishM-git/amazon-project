@@ -141,19 +141,12 @@ export function renderordersummary(){
             })  
         });
 
+       
+
   }
 
 
   
-function checkout(){
-  let whole_quantity=0;
-  cart.forEach(cartitem => {
-    whole_quantity+=cartitem.quantity;
-  });
-  console.log(whole_quantity)
 
-
-return whole_quantity;
-}
 
 
