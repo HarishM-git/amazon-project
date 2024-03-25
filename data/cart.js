@@ -21,8 +21,6 @@ function savetostorage(){
 }
 
 
-
-
 export function addtoCart(productId){
   let matchingId;
   cart.forEach(cartitem => {
