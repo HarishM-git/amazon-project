@@ -9,6 +9,7 @@ import {tofixedpricecents} from './utils/money.js';
 
 
 let html='';
+
 products.forEach(element => {
 
   html+=`<div class="product-container">
